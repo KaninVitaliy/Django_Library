@@ -9,10 +9,6 @@ class BookSerializer(serializers.ModelSerializer):
         model = Book
         fields = ["id", "author", "title", "year"]
 
-    def delete(self, instance, validated_data):
-        print(validated_data)
-        return super().update(validated_data)
-
     #доп задание
     # def to_representation(self, instance):
     #     representation = super().to_representation(instance)

@@ -21,17 +21,15 @@ from rest_framework.routers import SimpleRouter, DefaultRouter
 from main.views import (books_list, CreateBookView, BookDetailsView, BookUpdateView,
                         BookDeleteView, OrderViewSet)
 
-# router = SimpleRouter()
 router = DefaultRouter()
 router.register("orders", OrderViewSet)
-#зарегистрируйте вьюсет для заказов
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/books/', books_list),
     path('api/v1/books/create/', CreateBookView.as_view()),
-    path('api/v1/books/<int:book_id>/', BookDetailsView.as_view()),
+    path('api/v1/books/<int:pk>/', BookDetailsView.as_view()),
     path('api/v1/books/update/<int:pk>/', BookUpdateView.as_view()),
     path('api/v1/books/delete/<int:pk>/', BookDeleteView.as_view()),
     path("api/v1/", include(router.urls))
