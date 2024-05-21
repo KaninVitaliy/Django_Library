@@ -34,13 +34,13 @@ Content-Type: application/json
 
  # получение одной книги
 
-GET {{baseUrl}}/books/1/
+GET {{baseUrl}}/books/19/
 Content-Type: application/json
 
 ###
 
 # обновление книги
-PATCH {{baseUrl}}/books/update/1/
+PATCH {{baseUrl}}/books/update/19/
 Content-Type: application/json
 
 {
@@ -50,7 +50,7 @@ Content-Type: application/json
 ###
 
 # удаление книги
-DELETE {{baseUrl}}/books/delete/2/
+DELETE {{baseUrl}}/books/delete/19/
 Content-Type: application/json
 
 ###
@@ -62,7 +62,7 @@ Content-Type: application/json
 {
   "user_name": "Иван Петров",
   "days_count": 2,
-  "books": [1, 2]
+  "books": [20, 21]
 }
 
 ###
@@ -74,13 +74,13 @@ Content-Type: application/json
 ###
 
 # получение одного заказа
-GET {{baseUrl}}/orders/1/
+GET {{baseUrl}}/orders/4/
 Content-Type: application/json
 
 ###
 
 # обновление заказа
-PATCH {{baseUrl}}/orders/1/
+PATCH {{baseUrl}}/orders/4/
 Content-Type: application/json
 
 {
@@ -90,7 +90,7 @@ Content-Type: application/json
 ###
 
 # удаление заказа
-DELETE {{baseUrl}}/orders/1/
+DELETE {{baseUrl}}/orders/4/
 Content-Type: application/json
 
 ###

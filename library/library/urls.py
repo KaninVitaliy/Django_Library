@@ -29,7 +29,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/books/', books_list),
     path('api/v1/books/create/', CreateBookView.as_view()),
-    path('api/v1/books/<int:pk>/', BookDetailsView.as_view()),
+    path('api/v1/books/<int:book_id>/', BookDetailsView.as_view()),
     path('api/v1/books/update/<int:pk>/', BookUpdateView.as_view()),
     path('api/v1/books/delete/<int:pk>/', BookDeleteView.as_view()),
     path("api/v1/", include(router.urls))

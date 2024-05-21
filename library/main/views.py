@@ -32,11 +32,15 @@ class CreateBookView(APIView):
 
 
 class BookDetailsView(RetrieveAPIView):
-    try:
-        queryset = Book.objects.all()
-        serializer_class = BookSerializer
-    except Book.DoesNotExists:
-        raise Http404("Book not found")
+    def get(self, request, book_id):
+        try:
+            book = Book.objects.filter(id=book_id)
+            print(book)
+            ser = BookSerializer(book, many=True)
+            return Response(ser.data)
+        except Book.DoesNotExists:
+            raise Http404("Book not found")
+        pass
 
 
 class BookUpdateView(UpdateAPIView):
